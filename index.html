@@ -103,10 +103,21 @@ nav{
 .hero-left h1{
   font-family:'Poppins',sans-serif;font-weight:800;font-size:48px;
   line-height:1.15;margin-bottom:20px;color:var(--text1);
+  opacity:0;transform:translateY(24px);
+  animation:h1Enter .8s ease forwards;
+}
+@keyframes h1Enter{
+  to{opacity:1;transform:translateY(0)}
 }
 .hero-left h1 .grad{
-  background:linear-gradient(135deg,#10b981 0%,#7c3aed 60%,#f59e0b 100%);
+  background:linear-gradient(135deg,#10b981 0%,#7c3aed 30%,#f59e0b 60%,#10b981 100%);
+  background-size:200% auto;
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:gradFlow 5s linear infinite;
+}
+@keyframes gradFlow{
+  0%{background-position:0% 50%}
+  100%{background-position:200% 50%}
 }
 .hero-left p{
   font-size:16px;color:var(--text2);line-height:1.8;
@@ -238,6 +249,12 @@ nav{
 .tl-left{align-items:flex-end;text-align:right}
 .tl-right{align-items:flex-start;text-align:left}
 .tl-item{position:relative;max-width:440px}
+.tl-item{
+  opacity:0;transition:opacity .7s ease,transform .7s ease;
+}
+.tl-left .tl-item{transform:translateX(-50px)}
+.tl-right .tl-item{transform:translateX(50px)}
+.tl-item.visible{opacity:1;transform:translateX(0)}
 .tl-dot{
   position:absolute;top:16px;
   width:14px;height:14px;border-radius:50%;
@@ -543,11 +560,7 @@ footer{
   <div class="hero-grid">
     <div class="hero-left">
       <div class="hero-badge"><span></span>Open to Leadership Opportunities</div>
-    .hero-left h1{
-  opacity:0;transform:translateY(24px);
-  animation:h1Enter .8s ease forwards;
-}
-@keyframes h1Enter{ to{opacity:1;transform:translateY(0)} }
+      <h1>Transforming Manufacturing Through <span class="grad">ERP, Data &amp; Operational Excellence</span></h1>
       <p>ERP Project Manager &amp; Business Analyst with 7+ years of experience driving digital transformation, supply chain optimization, and manufacturing excellence in the RMG &amp; Textile industries of Bangladesh.</p>
       <div class="hero-btns">
         <a class="soc-btn" href="https://drive.google.com/file/d/1DhkVMhrrKtFufoX1nERXkB4FaF_07T0d/view?usp=sharing" target="_blank">📄 Download CV</a>
@@ -1112,6 +1125,20 @@ const skillObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.2 });
 document.querySelectorAll('.skills-wrap').forEach(el => skillObs.observe(el));
+
+// Timeline items slide-in animation
+const tlObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const items = Array.from(e.target.parentElement.children);
+      const idx = items.indexOf(e.target);
+      e.target.style.transitionDelay = (idx * 0.15) + 's';
+      e.target.classList.add('visible');
+      tlObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.tl-item').forEach(el => tlObs.observe(el));
 
 // Project filter
 document.querySelectorAll('.filt-btn').forEach(btn => {
