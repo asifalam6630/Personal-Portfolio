@@ -1,1208 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Md. Ashiful Alam – ERP Project Manager & Supply Chain Specialist</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet"/>
-<style>
-/* ===== RESET & BASE ===== */
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:#0a0e1a;color:#e8eaf0;line-height:1.7;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-
-/* ===== CSS VARIABLES ===== */
-:root{
-  --navy:#0a0e1a;
-  --navy2:#111827;
-  --navy3:#1a2235;
-  --navy4:#243047;
-  --emerald:#10b981;
-  --emerald2:#059669;
-  --emerald3:#d1fae5;
-  --violet:#7c3aed;
-  --violet2:#a78bfa;
-  --violet3:#ede9fe;
-  --amber:#f59e0b;
-  --amber2:#fbbf24;
-  --amber3:#fef3c7;
-  --coral:#f43f5e;
-  --coral2:#fb7185;
-  --sky:#0ea5e9;
-  --sky2:#38bdf8;
-  --text1:#f1f5f9;
-  --text2:#94a3b8;
-  --text3:#64748b;
-  --border:#1e2d47;
-  --card:#111827;
-  --card2:#1a2235;
-}
-
-/* ===== SCROLLBAR ===== */
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:#0a0e1a}
-::-webkit-scrollbar-thumb{background:#10b981;border-radius:3px}
-
-/* ===== NAVBAR ===== */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 5%;height:64px;
-  background:rgba(10,14,26,0.92);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-}
-.nav-logo{
-  font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;
-  background:linear-gradient(135deg,#10b981,#7c3aed);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.nav-links{display:flex;gap:32px}
-.nav-links a{font-size:13px;font-weight:500;color:var(--text2);transition:color .2s}
-.nav-links a:hover{color:var(--emerald)}
-.nav-cta{
-  background:linear-gradient(135deg,var(--emerald),var(--violet));
-  color:#fff;padding:9px 22px;border-radius:8px;
-  font-size:13px;font-weight:600;border:none;cursor:pointer;
-  transition:opacity .2s;
-}
-.nav-cta:hover{opacity:.85}
-.nav-menu-btn{display:none;background:none;border:none;color:var(--text1);font-size:22px;cursor:pointer}
-
-/* ===== HERO ===== */
-.hero{
-  min-height:100vh;
-  display:flex;align-items:center;
-  padding:120px 5% 80px;
-  position:relative;overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;z-index:0;
-  background:
-    radial-gradient(ellipse 70% 60% at 80% 40%,rgba(124,58,237,.18) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 40% at 20% 70%,rgba(16,185,129,.13) 0%,transparent 60%);
-}
-.hero-grid{
-  position:relative;z-index:1;
-  display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:center;
-  max-width:1200px;margin:0 auto;width:100%;
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);
-  color:var(--emerald);font-size:12px;font-weight:600;
-  padding:6px 14px;border-radius:20px;margin-bottom:20px;
-  letter-spacing:.04em;text-transform:uppercase;
-}
-.hero-badge span{width:6px;height:6px;background:var(--emerald);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero-left h1{
-  font-family:'Poppins',sans-serif;font-weight:800;font-size:48px;
-  line-height:1.15;margin-bottom:20px;color:var(--text1);
-  opacity:0;transform:translateY(24px);
-  animation:h1Enter .8s ease forwards;
-}
-@keyframes h1Enter{
-  to{opacity:1;transform:translateY(0)}
-}
-.hero-left h1 .grad{
-  background:linear-gradient(135deg,#10b981 0%,#7c3aed 30%,#f59e0b 60%,#10b981 100%);
-  background-size:200% auto;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  animation:gradFlow 5s linear infinite;
-}
-@keyframes gradFlow{
-  0%{background-position:0% 50%}
-  100%{background-position:200% 50%}
-}
-.hero-left p{
-  font-size:16px;color:var(--text2);line-height:1.8;
-  max-width:560px;margin-bottom:36px;
-}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
-.btn-g{
-  display:inline-flex;align-items:center;gap:8px;
-  background:linear-gradient(135deg,var(--emerald),var(--violet));
-  color:#fff;padding:13px 26px;border-radius:10px;
-  font-size:14px;font-weight:600;border:none;cursor:pointer;
-  transition:transform .2s,box-shadow .2s;
-}
-.btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,.3)}
-.btn-o{
-  display:inline-flex;align-items:center;gap:8px;
-  background:transparent;color:var(--text1);
-  padding:13px 26px;border-radius:10px;
-  font-size:14px;font-weight:500;
-  border:1px solid var(--border);cursor:pointer;
-  transition:border-color .2s,color .2s;
-}
-.btn-o:hover{border-color:var(--emerald);color:var(--emerald)}
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.hstat{
-  background:var(--card2);border:1px solid var(--border);
-  border-radius:12px;padding:18px 14px;text-align:center;
-  transition:border-color .2s,transform .2s;
-}
-.hstat:hover{border-color:var(--emerald);transform:translateY(-3px)}
-.hstat-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:28px;margin-bottom:4px}
-.hstat-num.em{color:var(--emerald)}
-.hstat-num.vi{color:var(--violet2)}
-.hstat-num.am{color:var(--amber2)}
-.hstat-num.sk{color:var(--sky2)}
-.hstat-lbl{font-size:11px;color:var(--text2);font-weight:500}
-
-/* Profile card */
-.profile-card{
-  background:linear-gradient(145deg,var(--navy3),var(--navy4));
-  border:1px solid var(--border);border-radius:20px;
-  padding:36px 28px;text-align:center;
-  position:relative;overflow:hidden;
-}
-.profile-card::before{
-  content:'';position:absolute;top:-40px;right:-40px;
-  width:150px;height:150px;
-  background:radial-gradient(circle,rgba(124,58,237,.25),transparent 70%);
-}
-.profile-avatar{
-  width:110px;height:110px;border-radius:50%;margin:0 auto 16px;
-  background:linear-gradient(135deg,var(--emerald),var(--violet));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Poppins',sans-serif;font-size:36px;font-weight:800;color:#fff;
-  position:relative;z-index:1;
-  overflow:hidden;
-  border:3px solid rgba(16,185,129,.4);
-}
-.profile-avatar img{
-  width:100%;height:100%;object-fit:cover;display:block;
-}
-.profile-card h3{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:var(--text1);margin-bottom:4px}
-.profile-card .ptitle{font-size:12px;color:var(--emerald);font-weight:600;margin-bottom:16px;letter-spacing:.05em}
-.profile-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px}
-.pill{
-  font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;
-}
-.pill.e{background:rgba(16,185,129,.15);color:var(--emerald);border:1px solid rgba(16,185,129,.3)}
-.pill.v{background:rgba(124,58,237,.15);color:var(--violet2);border:1px solid rgba(124,58,237,.3)}
-.pill.a{background:rgba(245,158,11,.15);color:var(--amber2);border:1px solid rgba(245,158,11,.3)}
-.profile-contact{display:flex;flex-direction:column;gap:8px}
-.pc-row{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--text2)}
-.pc-icon{
-  width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.pc-icon.e{background:rgba(16,185,129,.15)}
-.pc-icon.v{background:rgba(124,58,237,.15)}
-.pc-icon.s{background:rgba(14,165,233,.15)}
-
-/* ===== SECTION COMMONS ===== */
-.section{padding:80px 5%}
-.section-inner{max-width:1200px;margin:0 auto}
-.sec-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  margin-bottom:12px;
-}
-.sec-eyebrow.em{color:var(--emerald)}
-.sec-eyebrow.vi{color:var(--violet2)}
-.sec-eyebrow.am{color:var(--amber2)}
-.sec-eyebrow.sk{color:var(--sky2)}
-.sec-eyebrow.co{color:var(--coral2)}
-.sec-eyebrow::before{content:'';display:block;width:20px;height:2px;border-radius:2px}
-.sec-eyebrow.em::before{background:var(--emerald)}
-.sec-eyebrow.vi::before{background:var(--violet2)}
-.sec-eyebrow.am::before{background:var(--amber2)}
-.sec-eyebrow.sk::before{background:var(--sky2)}
-.sec-eyebrow.co::before{background:var(--coral2)}
-.sec-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:34px;color:var(--text1);margin-bottom:12px;line-height:1.2}
-.sec-sub{font-size:15px;color:var(--text2);max-width:560px;line-height:1.7;margin-bottom:48px}
-
-/* ===== ABOUT ===== */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-.about-text p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px}
-.about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
-.ah-card{
-  background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:16px;
-  transition:border-color .2s;
-}
-.ah-card:hover{border-color:var(--emerald)}
-.ah-icon{font-size:20px;margin-bottom:8px}
-.ah-card h4{font-size:13px;font-weight:600;color:var(--text1);margin-bottom:4px}
-.ah-card p{font-size:12px;color:var(--text2)}
-.about-right{display:flex;flex-direction:column;gap:16px}
-.edu-card{
-  background:var(--card2);border:1px solid var(--border);border-radius:14px;padding:20px;
-  border-left:3px solid var(--violet);
-}
-.edu-card h4{font-size:14px;font-weight:600;color:var(--text1);margin-bottom:4px}
-.edu-card p{font-size:12px;color:var(--text2)}
-.edu-card .grade{display:inline-block;margin-top:6px;font-size:11px;font-weight:600;color:var(--violet2);background:rgba(124,58,237,.12);padding:3px 9px;border-radius:20px}
-
-/* ===== TIMELINE ===== */
-.bg-alt{background:var(--navy2)}
-.timeline{position:relative;padding-left:0}
-.tl-wrap{display:grid;grid-template-columns:1fr 3px 1fr;gap:0;position:relative}
-.tl-line{background:linear-gradient(180deg,var(--emerald),var(--violet),var(--amber));border-radius:3px;position:relative}
-.tl-left,.tl-right{display:flex;flex-direction:column;gap:48px;padding:0 32px}
-.tl-left{align-items:flex-end;text-align:right}
-.tl-right{align-items:flex-start;text-align:left}
-.tl-item{position:relative;max-width:440px}
-.tl-item{
-  opacity:0;transition:opacity .7s ease,transform .7s ease;
-}
-.tl-left .tl-item{transform:translateX(-50px)}
-.tl-right .tl-item{transform:translateX(50px)}
-.tl-item.visible{opacity:1;transform:translateX(0)}
-.tl-dot{
-  position:absolute;top:16px;
-  width:14px;height:14px;border-radius:50%;
-  border:2px solid var(--navy2);
-}
-.tl-left .tl-dot{right:-39px;background:var(--emerald)}
-.tl-right .tl-dot{left:-39px}
-.tl-right .tl-item:nth-child(2) .tl-dot{background:var(--violet)}
-.tl-right .tl-item:nth-child(3) .tl-dot{background:var(--amber)}
-.tl-period{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
-.tl-left .tl-period{color:var(--emerald)}
-.tl-right .tl-item:nth-child(1) .tl-period{color:var(--violet2)}
-.tl-right .tl-item:nth-child(2) .tl-period{color:var(--amber2)}
-.tl-right .tl-item:nth-child(3) .tl-period{color:var(--sky2)}
-.tl-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:14px;padding:20px;transition:border-color .2s,transform .2s;
-}
-.tl-card:hover{transform:translateY(-2px)}
-.tl-left .tl-card:hover{border-color:var(--emerald)}
-.tl-right .tl-item:nth-child(1) .tl-card:hover{border-color:var(--violet)}
-.tl-right .tl-item:nth-child(2) .tl-card:hover{border-color:var(--amber)}
-.tl-right .tl-item:nth-child(3) .tl-card:hover{border-color:var(--sky)}
-.tl-role{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;color:var(--text1);margin-bottom:3px}
-.tl-company{font-size:12px;color:var(--text2);margin-bottom:10px}
-.tl-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:inherit}
-.tl-tag{font-size:10px;font-weight:500;padding:3px 8px;border-radius:20px;background:rgba(255,255,255,.06);color:var(--text2);border:1px solid rgba(255,255,255,.08)}
-.tl-kpi{font-size:11px;font-weight:600;margin-top:10px}
-.tl-kpi.em{color:var(--emerald)}
-.tl-kpi.vi{color:var(--violet2)}
-.tl-kpi.am{color:var(--amber2)}
-.tl-kpi.sk{color:var(--sky2)}
-
-/* ===== PROJECTS ===== */
-.projects-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
-.filt-btn{
-  background:var(--card2);border:1px solid var(--border);
-  color:var(--text2);font-size:12px;font-weight:500;
-  padding:7px 16px;border-radius:20px;cursor:pointer;
-  transition:all .2s;
-}
-.filt-btn.active,.filt-btn:hover{background:var(--emerald);border-color:var(--emerald);color:#fff}
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.proj-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:16px;padding:24px;
-  transition:border-color .2s,transform .2s;
-  cursor:pointer;
-}
-.proj-card:hover{transform:translateY(-4px)}
-.proj-card.c-em{border-top:3px solid var(--emerald)}
-.proj-card.c-vi{border-top:3px solid var(--violet)}
-.proj-card.c-am{border-top:3px solid var(--amber)}
-.proj-card.c-sk{border-top:3px solid var(--sky)}
-.proj-card.c-co{border-top:3px solid var(--coral)}
-.proj-icon-wrap{
-  width:48px;height:48px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;margin-bottom:14px;
-}
-.pi-em{background:rgba(16,185,129,.15)}
-.pi-vi{background:rgba(124,58,237,.15)}
-.pi-am{background:rgba(245,158,11,.15)}
-.pi-sk{background:rgba(14,165,233,.15)}
-.pi-co{background:rgba(244,63,94,.15)}
-.proj-card h3{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text1);margin-bottom:8px;line-height:1.3}
-.proj-card p{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:14px}
-.proj-kpi-row{display:flex;gap:8px;flex-wrap:wrap}
-.pkpi{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px}
-.pkpi.em{background:rgba(16,185,129,.12);color:var(--emerald)}
-.pkpi.vi{background:rgba(124,58,237,.12);color:var(--violet2)}
-.pkpi.am{background:rgba(245,158,11,.12);color:var(--amber2)}
-.pkpi.sk{background:rgba(14,165,233,.12);color:var(--sky2)}
-.pkpi.co{background:rgba(244,63,94,.12);color:var(--coral2)}
-
-/* ===== SKILLS ===== */
-.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.skill-group h3{font-size:13px;font-weight:600;color:var(--text2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px}
-.skill-item{margin-bottom:16px}
-.skill-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
-.skill-name{font-size:14px;font-weight:500;color:var(--text1);display:flex;align-items:center;gap:8px}
-.skill-pct{font-size:12px;font-weight:600}
-.skill-track{height:6px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden}
-.skill-fill{height:100%;border-radius:3px;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
-.sf-em{background:linear-gradient(90deg,var(--emerald2),var(--emerald))}
-.sf-vi{background:linear-gradient(90deg,var(--violet),var(--violet2))}
-.sf-am{background:linear-gradient(90deg,#d97706,var(--amber2))}
-.sf-sk{background:linear-gradient(90deg,#0369a1,var(--sky2))}
-
-/* Tools grid */
-.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px}
-.tool-chip{
-  background:var(--card2);border:1px solid var(--border);
-  border-radius:12px;padding:14px;text-align:center;
-  transition:border-color .2s,transform .2s;
-}
-.tool-chip:hover{transform:translateY(-2px)}
-.tool-chip.te{border-bottom:2px solid var(--emerald)}
-.tool-chip.tv{border-bottom:2px solid var(--violet2)}
-.tool-chip.ta{border-bottom:2px solid var(--amber2)}
-.tool-chip.ts{border-bottom:2px solid var(--sky2)}
-.tool-emoji{font-size:22px;margin-bottom:6px}
-.tool-name{font-size:12px;font-weight:600;color:var(--text1)}
-
-/* ===== CERTIFICATIONS ===== */
-.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.cert-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:16px;padding:24px;
-  transition:transform .2s,border-color .2s;position:relative;overflow:hidden;
-}
-.cert-card::after{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-}
-.cert-card.cc1::after{background:linear-gradient(90deg,var(--emerald),var(--violet))}
-.cert-card.cc2::after{background:linear-gradient(90deg,var(--violet),var(--amber))}
-.cert-card.cc3::after{background:linear-gradient(90deg,var(--amber),var(--sky))}
-.cert-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.15)}
-.cert-badge-wrap{
-  width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-  font-size:24px;margin-bottom:16px;
-}
-.cb1{background:linear-gradient(135deg,rgba(16,185,129,.2),rgba(124,58,237,.2))}
-.cb2{background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(245,158,11,.2))}
-.cb3{background:linear-gradient(135deg,rgba(245,158,11,.2),rgba(14,165,233,.2))}
-.cert-card h3{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;color:var(--text1);margin-bottom:6px;line-height:1.3}
-.cert-card p{font-size:12px;color:var(--text2);margin-bottom:12px}
-.cert-org{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px}
-.co1{background:rgba(16,185,129,.12);color:var(--emerald)}
-.co2{background:rgba(124,58,237,.12);color:var(--violet2)}
-.co3{background:rgba(245,158,11,.12);color:var(--amber2)}
-
-/* ===== PUBLICATIONS ===== */
-.pubs-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.pub-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:16px;padding:28px;
-  transition:border-color .2s,transform .2s;
-}
-.pub-card:hover{transform:translateY(-3px);border-color:var(--emerald)}
-.pub-num{
-  font-family:'Poppins',sans-serif;font-size:48px;font-weight:800;
-  background:linear-gradient(135deg,var(--emerald),var(--violet));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-bottom:12px;line-height:1;
-}
-.pub-card h3{font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;color:var(--text1);margin-bottom:12px;line-height:1.4}
-.pub-card p{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:16px}
-.pub-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.pub-tag{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(16,185,129,.1);color:var(--emerald)}
-.pub-link{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:13px;font-weight:600;color:var(--emerald);
-  transition:gap .2s;
-}
-.pub-link:hover{gap:10px}
-.pub-link::after{content:'→'}
-
-/* ===== CONTACT ===== */
-.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
-.contact-cards{display:flex;flex-direction:column;gap:16px;margin-bottom:28px}
-.cc-card{
-  display:flex;align-items:center;gap:16px;
-  background:var(--card2);border:1px solid var(--border);
-  border-radius:14px;padding:18px;transition:border-color .2s;
-}
-.cc-card:hover{border-color:var(--emerald)}
-.cc-icon{
-  width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;
-}
-.ci1{background:rgba(16,185,129,.15)}
-.ci2{background:rgba(14,165,233,.15)}
-.ci3{background:rgba(124,58,237,.15)}
-.ci4{background:rgba(245,158,11,.15)}
-.cc-label{font-size:11px;color:var(--text2);margin-bottom:2px}
-.cc-val{font-size:13px;font-weight:600;color:var(--text1)}
-.social-row{display:flex;gap:12px;flex-wrap:wrap}
-.soc-btn{
-  display:flex;align-items:center;gap:8px;
-  background:var(--card2);border:1px solid var(--border);
-  border-radius:10px;padding:10px 16px;font-size:12px;font-weight:600;color:var(--text2);
-  transition:all .2s;cursor:pointer;
-}
-.soc-btn:hover{border-color:var(--emerald);color:var(--emerald);transform:translateY(-2px)}
-.contact-form-wrap{
-  background:var(--card2);border:1px solid var(--border);
-  border-radius:20px;padding:32px;
-}
-.contact-form-wrap h3{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;color:var(--text1);margin-bottom:24px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:7px;letter-spacing:.03em}
-.form-group input,.form-group textarea,.form-group select{
-  width:100%;background:var(--card);border:1px solid var(--border);
-  border-radius:10px;padding:12px 16px;color:var(--text1);font-size:14px;
-  font-family:'Inter',sans-serif;outline:none;transition:border-color .2s;
-}
-.form-group input:focus,.form-group textarea:focus{border-color:var(--emerald)}
-.form-group textarea{height:110px;resize:none}
-.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text3)}
-.submit-btn{
-  width:100%;padding:14px;
-  background:linear-gradient(135deg,var(--emerald),var(--violet));
-  color:#fff;border:none;border-radius:10px;
-  font-size:15px;font-weight:700;cursor:pointer;
-  font-family:'Poppins',sans-serif;transition:opacity .2s,transform .2s;
-}
-.submit-btn:hover{opacity:.88;transform:translateY(-1px)}
-
-/* ===== FOOTER ===== */
-footer{
-  background:var(--navy2);border-top:1px solid var(--border);
-  padding:40px 5%;
-}
-.footer-inner{
-  max-width:1200px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
-}
-.footer-logo{
-  font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;
-  background:linear-gradient(135deg,#10b981,#7c3aed);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.footer-copy{font-size:12px;color:var(--text3);text-align:center}
-.footer-links{display:flex;gap:24px}
-.footer-links a{font-size:12px;color:var(--text2);transition:color .2s}
-.footer-links a:hover{color:var(--emerald)}
-
-/* ===== DIVIDER ===== */
-.div-line{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0 5%}
-
-/* ===== MOBILE MENU ===== */
-.mobile-menu{
-  display:none;flex-direction:column;gap:4px;
-  position:fixed;top:64px;left:0;right:0;z-index:999;
-  background:rgba(10,14,26,.97);backdrop-filter:blur(12px);
-  padding:20px 5%;border-bottom:1px solid var(--border);
-}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-size:15px;color:var(--text2);padding:10px 0;border-bottom:1px solid var(--border);font-weight:500}
-.mobile-menu a:last-child{border:none}
-
-/* ===== SCROLL ANIMATIONS ===== */
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr;gap:36px}
-  .profile-card{display:none}
-  .hero-left h1{font-size:34px}
-  .hero-stats{grid-template-columns:repeat(2,1fr)}
-  .about-grid,.skills-wrap,.pubs-grid,.contact-grid{grid-template-columns:1fr}
-  .projects-grid,.certs-grid{grid-template-columns:repeat(2,1fr)}
-  .tl-wrap{grid-template-columns:1fr}
-  .tl-line{display:none}
-  .tl-left,.tl-right{align-items:flex-start;text-align:left;padding:0}
-  .tl-left .tl-period{color:var(--emerald)}
-  .tl-left .tl-dot,.tl-right .tl-dot{display:none}
-  .tools-grid{grid-template-columns:repeat(3,1fr)}
-  .nav-links{display:none}
-  .nav-menu-btn{display:block}
-  .form-row{grid-template-columns:1fr}
-  .nav-cta{display:none}
-}
-@media(max-width:540px){
-  .projects-grid,.certs-grid,.tools-grid{grid-template-columns:1fr}
-  .hero-stats{grid-template-columns:repeat(2,1fr)}
-  .hero-btns{flex-direction:column;align-items:flex-start}
-  .section{padding:56px 5%}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marker Ratio Solver</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <div class="nav-logo">AA<span style="background:none;-webkit-text-fill-color:var(--emerald)">.</span></div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <a href="https://www.linkedin.com/in/md-ashiful-alam11144103" target="_blank" class="nav-cta">Connect on LinkedIn</a>
-  <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#certifications">Certifications</a>
-  <a href="#publications">Publications</a>
-  <a href="#contact">Contact</a>
-</div>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-grid">
-    <div class="hero-left">
-      <div class="hero-badge"><span></span>Open to Leadership Opportunities</div>
-      <h1>Transforming Manufacturing Through <span class="grad">ERP, Data &amp; Operational Excellence</span></h1>
-      <p>ERP Project Manager &amp; Business Analyst with 7+ years of experience driving digital transformation, supply chain optimization, and manufacturing excellence in the RMG &amp; Textile industries of Bangladesh.</p>
-      <div class="hero-btns">
-        <a class="soc-btn" href="https://drive.google.com/file/d/1DhkVMhrrKtFufoX1nERXkB4FaF_07T0d/view?usp=sharing" target="_blank">📄 Download CV</a>
-        <a href="#projects" class="btn-o">🗂 View Projects</a>
-        <a href="#contact" class="btn-o">✉ Contact Me</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hstat"><div class="hstat-num em" id="s1">0</div><div class="hstat-lbl">Years Experience</div></div>
-        <div class="hstat"><div class="hstat-num vi" id="s2">0</div><div class="hstat-lbl">ERP Systems Built</div></div>
-        <div class="hstat"><div class="hstat-num am" id="s3">0</div><div class="hstat-lbl">Tons Inventory Managed</div></div>
-        <div class="hstat"><div class="hstat-num sk" id="s4">0</div><div class="hstat-lbl">Departments Digitized</div></div>
-      </div>
-    </div>
-    <div class="profile-card">
-      <div class="profile-avatar"><img src="data:image/jpeg;base64,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" alt="Md. Ashiful Alam"/></div>
-      <h3>Md. Ashiful Alam</h3>
-      <div class="ptitle">CPIM® · CSCA™</div>
-      <div class="profile-pills">
-        <span class="pill e">ERP Manager</span>
-        <span class="pill v">Business Analyst</span>
-        <span class="pill a">Lean Expert</span>
-        <span class="pill e">Supply Chain</span>
-        <span class="pill v">APICS-ASCM</span>
-        <span class="pill a">ISCEA-USA</span>
-      </div>
-      <div class="profile-contact">
-        <div class="pc-row"><div class="pc-icon e">📧</div>asifalamipe@gmail.com</div>
-        <div class="pc-row"><div class="pc-icon v">📱</div>+880 1309-615036</div>
-        <div class="pc-row"><div class="pc-icon s">📍</div>Dhaka, Bangladesh</div>
-        <a href="https://apexholdings.com/" target="_blank" style="text-decoration:none;color:inherit"><div class="pc-row"><div class="pc-icon e">🏢</div>Apex Holdings Ltd</div></a>
-      </div>
+  <!-- ─── SOLVING SPINNER OVERLAY ────────────────────────────────────────── -->
+  <div class="spinner-overlay" id="spinnerOverlay" style="display:none;">
+    <div class="spinner-box">
+      <div class="spinner-ring"></div>
+      <p class="spinner-label">Searching for global minimum…</p>
+      <p class="spinner-sub">Proving the fewest possible markers</p>
+      <p class="spinner-time"><span id="spinnerTime">0.0s</span> elapsed</p>
     </div>
   </div>
-</section>
 
-<div class="div-line"></div>
-
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="section-inner fade-in">
-    <div class="sec-eyebrow em">Who I Am</div>
-    <h2 class="sec-title">About Me</h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I am an ERP Project Manager, Business Analyst, and Manufacturing Excellence specialist with extensive experience implementing ERP solutions across the RMG and Textile industries. Over the past 7+ years at Apex Holdings Ltd, I have led end-to-end digital transformation projects — from master data design to full-scale system rollouts.</p>
-        <p>My work bridges industrial engineering, supply chain operations, and software implementation. I've built and deployed Textile Management Systems, Garments Management Systems, Logistics Systems, Laboratory Systems, and Sample Management Systems — each driving measurable improvements in efficiency, traceability, and cost control.</p>
-        <p>I hold CPIM® certification from APICS-ASCM and CSCA™ from ISCEA-USA, and I apply Lean, Kaizen, JIT, and Kanban methodologies in everything I build.</p>
-        <div class="about-highlights">
-          <div class="ah-card"><div class="ah-icon">🔧</div><h4>ERP Implementation</h4><p>End-to-end system design, configuration &amp; rollout</p></div>
-          <div class="ah-card"><div class="ah-icon">🔗</div><h4>Supply Chain</h4><p>Planning, procurement &amp; inventory optimization</p></div>
-          <div class="ah-card"><div class="ah-icon">⚙️</div><h4>Lean Manufacturing</h4><p>VSM, 5S, Kaizen, JIT &amp; continuous improvement</p></div>
-          <div class="ah-card"><div class="ah-icon">📊</div><h4>Data Analytics</h4><p>KPI dashboards, Power BI &amp; data-driven decisions</p></div>
-        </div>
+  <!-- ─── HEADER ─────────────────────────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-mark">◈</span>
+        <span class="logo-text">MarkerSolver</span>
       </div>
-      <div class="about-right">
-        <div class="edu-card">
-          <h4>B.Sc. in Industrial &amp; Production Engineering</h4>
-          <p>Ahsanullah University of Science &amp; Technology</p>
-          <span class="grade">CGPA 3.62 / 4.00 · Graduated 2018</span>
-        </div>
-        <div class="edu-card" style="border-left-color:var(--amber)">
-          <h4>CPIM® – Certified in Planning &amp; Inventory Management</h4>
-          <p>APICS-ASCM (Association for Supply Chain Management)</p>
-          <span class="grade" style="color:var(--amber2);background:rgba(245,158,11,.12)">Issued Oct 2018</span>
-        </div>
-        <div class="edu-card" style="border-left-color:var(--sky)">
-          <h4>CSCA™ – Certified Supply Chain Analyst</h4>
-          <p>ISCEA – International Supply Chain Education Alliance, USA</p>
-          <span class="grade" style="color:var(--sky2);background:rgba(14,165,233,.12)">Professional Certification</span>
-        </div>
-        <div class="edu-card" style="border-left-color:var(--coral)">
-          <h4>HPE – High Performance Executive</h4>
-          <p>Industria-Academia · Data Analyst Boot Camp (Data 360°)</p>
-          <span class="grade" style="color:var(--coral2);background:rgba(244,63,94,.12)">Executive Development</span>
-        </div>
-      </div>
+      <p class="header-sub">Cut Ratio Planning Tool</p>
     </div>
-  </div>
-</section>
+  </header>
 
-<div class="div-line"></div>
+  <!-- ─── MAIN ───────────────────────────────────────────────────────────── -->
+  <main>
 
-<!-- EXPERIENCE -->
-<section class="section bg-alt" id="experience">
-  <div class="section-inner fade-in">
-    <div class="sec-eyebrow vi">Career Timeline</div>
-    <h2 class="sec-title">Professional Journey</h2>
-    <p class="sec-sub">7+ years of progressive growth at Apex Holdings Ltd — from Trainee Analyst to leading digital transformation across the entire textile &amp; garments operation.</p>
-    <div class="tl-wrap">
-      <div class="tl-left">
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-period">Jul 2025 – Present</div>
-          <div class="tl-card">
-            <div class="tl-role">Assistant Manager – Garments Operating System (GOS)</div>
-            <div class="tl-company">Apex Holdings Ltd · Gazipur, Dhaka</div>
-            <div class="tl-tags">
-              <span class="tl-tag">GMS Phase 5</span><span class="tl-tag">Lean Manufacturing</span><span class="tl-tag">Bundle Traceability</span><span class="tl-tag">WIP Control</span><span class="tl-tag">OTD KPI</span><span class="tl-tag">VSM & Kaizen</span>
-            </div>
-            <div class="tl-kpi em">↑ OTD · ↓ WIP · RFT Monitoring Active</div>
+    <!-- ── INTRO ─────────────────────────────────────────────────────────── -->
+    <section class="intro">
+      <h1>Cut Marker Ratio Planner</h1>
+      <p class="intro-desc">
+        Enter your order quantities, table length, fabric consumption and max ply.
+        The solver exhaustively proves the minimum number of marker rows — ratios
+        and ply counts — needed to fulfill the order exactly, with no overproduction.
+      </p>
+    </section>
+
+    <!-- ── FORM ──────────────────────────────────────────────────────────── -->
+    <section class="form-section">
+
+      <!-- BLOCK 1: Sizes -->
+      <div class="form-block">
+        <div class="block-header">
+          <span class="block-num">01</span>
+          <div>
+            <h2>Sizes &amp; Order Quantities</h2>
+            <p class="block-desc">Add each size with its required order quantity.</p>
           </div>
         </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-period">Nov 2021 – Apr 2023</div>
-          <div class="tl-card">
-            <div class="tl-role">Senior Executive – Supply Chain Operation</div>
-            <div class="tl-company">Apex Holdings Ltd · Gazipur</div>
-            <div class="tl-tags">
-              <span class="tl-tag">Sample Mgmt System</span><span class="tl-tag">Logistics ERP</span><span class="tl-tag">Warehouse Digitization</span><span class="tl-tag">In-plant Lock Protocols</span>
-            </div>
-            <div class="tl-kpi am">60% Lead Time Reduction · Auto-BOM Generation</div>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-period">Oct 2018 – Nov 2019</div>
-          <div class="tl-card">
-            <div class="tl-role">Trainee Supply Chain Analyst</div>
-            <div class="tl-company">Apex Holdings Ltd · Kaliakoir, Gazipur</div>
-            <div class="tl-tags">
-              <span class="tl-tag">Business Process Mapping</span><span class="tl-tag">Master Data Design</span><span class="tl-tag">Item Code Structures</span><span class="tl-tag">ERP Module Rules</span>
-            </div>
-            <div class="tl-kpi sk">Foundation of all subsequent ERP implementations</div>
-          </div>
+
+        <div class="size-table-wrap">
+          <table class="size-table" id="sizeTable">
+            <thead>
+              <tr>
+                <th>Size Name</th>
+                <th>Order Quantity</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="sizeBody">
+              <!-- rows injected by JS -->
+            </tbody>
+          </table>
+          <button class="btn-add" id="addSizeBtn" type="button">
+            <span>+</span> Add Size
+          </button>
         </div>
       </div>
-      <div class="tl-line"></div>
-      <div class="tl-right">
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-period">Apr 2023 – Jun 2025</div>
-          <div class="tl-card">
-            <div class="tl-role">Assistant Manager – Supply Chain Operation</div>
-            <div class="tl-company">Apex Holdings Ltd · Dhaka</div>
-            <div class="tl-tags">
-              <span class="tl-tag">TMS Phase 3 & 4</span><span class="tl-tag">Dyeing Planning</span><span class="tl-tag">Kanban & FIFO</span><span class="tl-tag">ERP-Sedo Integration</span><span class="tl-tag">Online QC (POS)</span>
-            </div>
-            <div class="tl-kpi vi">400+ Ton KFF Managed · RFT 60% KPI Board</div>
+
+      <!-- BLOCK 2: Marker Parameters -->
+      <div class="form-block">
+        <div class="block-header">
+          <span class="block-num">02</span>
+          <div>
+            <h2>Marker Parameters</h2>
+            <p class="block-desc">
+              Total Ratio is computed from table length and fabric consumption.
+            </p>
           </div>
         </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-period">Nov 2019 – Nov 2021</div>
-          <div class="tl-card">
-            <div class="tl-role">Executive – Supply Chain Operation</div>
-            <div class="tl-company">Apex Holdings Ltd · Gazipur</div>
-            <div class="tl-tags">
-              <span class="tl-tag">Yarn Procurement ERP</span><span class="tl-tag">TLS Lab System</span><span class="tl-tag">PDA Transactions</span><span class="tl-tag">Barcode Tracking</span><span class="tl-tag">MRP & BOM</span>
-            </div>
-            <div class="tl-kpi sk">1,500+ Tons Yarn Managed · 100% Data Migration</div>
+
+        <div class="params-grid">
+          <div class="param-field">
+            <label for="tableLength">Table Length <span class="unit">(m)</span></label>
+            <input type="number" id="tableLength" min="1" step="0.01" placeholder="e.g. 2000" />
           </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-period">Jan 2018 – Aug 2018</div>
-          <div class="tl-card">
-            <div class="tl-role">Internship Trainee</div>
-            <div class="tl-company">Midas Safety · Chattogram, Bangladesh</div>
-            <div class="tl-tags">
-              <span class="tl-tag">Fully Automatic Production</span><span class="tl-tag">Inventory Control</span><span class="tl-tag">Warehouse Improvement</span><span class="tl-tag">ERP Exposure</span>
-            </div>
-            <div class="tl-kpi am">Safety Gloves Manufacturing · Production Systems</div>
+          <div class="param-field">
+            <label for="consumption">Fabric Consumption <span class="unit">(m per piece)</span></label>
+            <input type="number" id="consumption" min="0.01" step="0.01" placeholder="e.g. 50" />
+          </div>
+          <div class="param-field param-derived">
+            <label>Total Ratio <span class="derived-tag">auto-computed</span></label>
+            <div class="derived-value" id="totalRatioDisplay">—</div>
+            <div class="derived-formula">= floor( table length ÷ consumption per piece )</div>
+          </div>
+          <div class="param-field">
+            <label for="maxPly">Max Ply Quantity</label>
+            <input type="number" id="maxPly" min="1" step="1" placeholder="e.g. 100" value="100" />
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<div class="div-line"></div>
+      <!-- SOLVE BUTTON -->
+      <div class="solve-row">
+        <button class="btn-solve" id="solveBtn" type="button">
+          Solve Marker Plan
+          <span class="btn-arrow">→</span>
+        </button>
+        <p class="solve-note" id="solveNote"></p>
+      </div>
 
-<!-- PROJECTS -->
-<section class="section" id="projects">
-  <div class="section-inner fade-in">
-    <div class="sec-eyebrow am">Portfolio</div>
-    <h2 class="sec-title">ERP Projects</h2>
-    <p class="sec-sub">Major system implementations spanning Textile, Garments, Logistics, Laboratory, and Warehouse domains — each delivering measurable operational impact.</p>
-    <div class="projects-filter">
-      <button class="filt-btn active" data-cat="all">All Projects</button>
-      <button class="filt-btn" data-cat="garments">Garments ERP</button>
-      <button class="filt-btn" data-cat="textile">Textile ERP</button>
-      <button class="filt-btn" data-cat="logistics">Logistics</button>
-      <button class="filt-btn" data-cat="lab">Laboratory</button>
-      <button class="filt-btn" data-cat="warehouse">Warehouse</button>
-    </div>
-    <div class="projects-grid">
-      <div class="proj-card c-em" data-cat="garments">
-        <div class="proj-icon-wrap pi-em">👕</div>
-        <h3>Garments Management System (GMS)</h3>
-        <p>End-to-end digitization of Cutting, Sewing &amp; Finishing with real-time bundle traceability, WIP control, inline quality checks, and carton-to-shipment tracking.</p>
-        <div class="proj-kpi-row">
-          <span class="pkpi em">↑ OTD</span>
-          <span class="pkpi em">↓ WIP</span>
-          <span class="pkpi em">DHU</span>
-          <span class="pkpi em">Quality</span>
-        </div>
-      </div>
-      <div class="proj-card c-vi" data-cat="textile">
-        <div class="proj-icon-wrap pi-vi">🎨</div>
-        <h3>TMS – Dyeing &amp; Finishing (Phase 3)</h3>
-        <p>Master scheduling and dyeing capacity planning based on color approvals, step-wise machine load plans, 100% WIP management, and 400+ Ton KFF stock traceability with TR-wise control.</p>
-        <div class="proj-kpi-row">
-          <span class="pkpi vi">400T KFF Stock</span>
-          <span class="pkpi vi">RFT 60%</span>
-          <span class="pkpi vi">ERP-Sedo</span>
-        </div>
-      </div>
-      <div class="proj-card c-am" data-cat="textile">
-        <div class="proj-icon-wrap pi-am">🧵</div>
-        <h3>TMS – Narrow Fabric Weaving (Phase 4)</h3>
-        <p>Automated Warping, Covering &amp; Winding plan generation, machine-wise weaving production planning, GNF online tablet-based quality checking, and accessories warehouse management.</p>
-        <div class="proj-kpi-row">
-          <span class="pkpi am">Auto-Plan Gen.</span>
-          <span class="pkpi am">Online QC</span>
-          <span class="pkpi am">Item Code</span>
-        </div>
-      </div>
-      <div class="proj-card c-sk" data-cat="warehouse">
-        <div class="proj-icon-wrap pi-sk">🏭</div>
-        <h3>Warehouse Automation – PDA &amp; Barcode</h3>
-        <p>Semi-automated warehouse system with PDA transactions, barcode and heat-seal sticker tracking on yarn sacks and fabric rolls, rack-wise lot traceability for 1,500+ tons of yarn stock.</p>
-        <div class="proj-kpi-row">
-          <span class="pkpi sk">1,500+ Tons</span>
-          <span class="pkpi sk">100% Migration</span>
-          <span class="pkpi sk">JIT Ready</span>
-        </div>
-      </div>
-      <div class="proj-card c-co" data-cat="logistics">
-        <div class="proj-icon-wrap pi-co">🚛</div>
-        <h3>Logistics Management System (LMS)</h3>
-        <p>In-plant logistics digitization covering vehicle onboarding, service time tracking, serial-based lock &amp; key security protocols, and full material movement traceability across departments.</p>
-        <div class="proj-kpi-row">
-          <span class="pkpi co">Full Traceability</span>
-          <span class="pkpi co">Security Protocols</span>
-          <span class="pkpi co">Faster TAT</span>
-        </div>
-      </div>
-      <div class="proj-card c-vi" data-cat="lab">
-        <div class="proj-icon-wrap pi-vi">🔬</div>
-        <h3>Testing Laboratory System (TLS)</h3>
-        <p>Automated lab report generation per company and buyer-specific criteria, test request forms, report approval workflows, audit-ready data traceability, and lab standardization across all testing criteria.</p>
-        <div class="proj-kpi-row">
-          <span class="pkpi vi">Buyer Audit Ready</span>
-          <span class="pkpi vi">Auto Reports</span>
-          <span class="pkpi vi">TRF System</span>
-        </div>
-      </div>
-      <div class="proj-card c-em" data-cat="garments">
-        <div class="proj-icon-wrap pi-em">🧩</div>
-        <h3>Apex Sample Management System (ASM)</h3>
-        <p>WO-based sample tracking by production area, stage-wise visibility, automated production BOM generation post-bulk confirmation, reducing sample delivery lead time by 60%.</p>
-        <div class="proj-kpi-row">
-          <span class="pkpi em">60% Lead Time ↓</span>
-          <span class="pkpi em">Auto-BOM</span>
-          <span class="pkpi em">WO Tracking</span>
-        </div>
-      </div>
-      <div class="proj-card c-am" data-cat="textile">
-        <div class="proj-icon-wrap pi-am">📦</div>
-        <h3>TMS – Yarn Procurement &amp; Knitting (Phase 1)</h3>
-        <p>Full MRP cycle from BOM generation through yarn purchase requirements to knitting work orders. VMI best practices, safety stock management, and reorder point automation for seamless procurement.</p>
-        <div class="proj-kpi-row">
-          <span class="pkpi am">MRP Cycle</span>
-          <span class="pkpi am">VMI</span>
-          <span class="pkpi am">Safety Stock</span>
-        </div>
-      </div>
-      <div class="proj-card c-sk" data-cat="textile">
-        <div class="proj-icon-wrap pi-sk">🧶</div>
-        <h3>TMS – Warp Knitting &amp; Greige Stock (Phase 2)</h3>
-        <p>Standard reference library, warping plan and production scheduling linked to project numbers, online quality checking with roll-wise traceability, and 700+ ton greige fabric data migration.</p>
-        <div class="proj-kpi-row">
-          <span class="pkpi sk">700T Migrated</span>
-          <span class="pkpi sk">Roll Traceability</span>
-          <span class="pkpi sk">Capacity Plan</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<div class="div-line"></div>
+    <!-- ── RESULTS ────────────────────────────────────────────────────────── -->
+    <section class="results-section" id="resultsSection" style="display:none;">
 
-<!-- SKILLS -->
-<section class="section bg-alt" id="skills">
-  <div class="section-inner fade-in">
-    <div class="sec-eyebrow sk">Expertise</div>
-    <h2 class="sec-title">Skills Dashboard</h2>
-    <p class="sec-sub">Technical and business competencies developed through hands-on ERP implementation, supply chain leadership, and manufacturing excellence work over 7+ years.</p>
-    <div class="skills-wrap">
-      <div class="skill-group">
-        <h3>Technical Skills</h3>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">⚙️ ERP Implementation</span><span class="skill-pct" style="color:var(--emerald)">95%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-em" data-w="95"></div></div>
+      <div class="results-header">
+        <h2>Results</h2>
+        <div class="results-meta" id="resultsMeta"></div>
+      </div>
+
+      <!-- Marker Plan -->
+      <div class="result-block">
+        <div class="result-block-header">
+          <span class="result-block-label">Marker Plan</span>
+          <span class="result-block-sub" id="markerPlanSub"></span>
         </div>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">📊 Excel &amp; MS Project</span><span class="skill-pct" style="color:var(--emerald)">92%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-em" data-w="92"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">🔵 Oracle APEX / SQL</span><span class="skill-pct" style="color:var(--sky2)">83%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-sk" data-w="83"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">📈 Power BI &amp; Data Analytics</span><span class="skill-pct" style="color:var(--sky2)">80%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-sk" data-w="80"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">🐍 Python &amp; MySQL</span><span class="skill-pct" style="color:var(--violet2)">73%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-vi" data-w="73"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">🗺 MS Visio &amp; Process Mapping</span><span class="skill-pct" style="color:var(--amber2)">85%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-am" data-w="85"></div></div>
+        <div class="table-scroll">
+          <table class="result-table" id="markerTable">
+            <thead id="markerTableHead"></thead>
+            <tbody id="markerTableBody"></tbody>
+          </table>
         </div>
       </div>
-      <div class="skill-group">
-        <h3>Business Skills</h3>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">🔗 Supply Chain Management</span><span class="skill-pct" style="color:var(--emerald)">96%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-em" data-w="96"></div></div>
+
+      <!-- Fulfillment Summary -->
+      <div class="result-block">
+        <div class="result-block-header">
+          <span class="result-block-label">Fulfillment Summary</span>
         </div>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">📦 Inventory Control</span><span class="skill-pct" style="color:var(--emerald)">93%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-em" data-w="93"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">📅 Production Planning</span><span class="skill-pct" style="color:var(--amber2)">90%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-am" data-w="90"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">⚡ Lean / Kaizen / 5S / JIT</span><span class="skill-pct" style="color:var(--amber2)">87%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-am" data-w="87"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">🗂 Project Management</span><span class="skill-pct" style="color:var(--violet2)">88%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-vi" data-w="88"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header"><span class="skill-name">👥 Change Management</span><span class="skill-pct" style="color:var(--violet2)">82%</span></div>
-          <div class="skill-track"><div class="skill-fill sf-vi" data-w="82"></div></div>
+        <div class="table-scroll">
+          <table class="result-table" id="fulfillTable">
+            <thead>
+              <tr>
+                <th>Size</th>
+                <th>Order Qty</th>
+                <th>Produced</th>
+                <th>Shortfall</th>
+                <th>Fill Rate</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="fulfillBody"></tbody>
+          </table>
         </div>
       </div>
-    </div>
-    <div class="tools-grid">
-      <div class="tool-chip te"><div class="tool-emoji">🏭</div><div class="tool-name">Oracle APEX</div></div>
-      <div class="tool-chip tv"><div class="tool-emoji">📊</div><div class="tool-name">Power BI</div></div>
-      <div class="tool-chip ta"><div class="tool-emoji">🐍</div><div class="tool-name">Python</div></div>
-      <div class="tool-chip ts"><div class="tool-emoji">🗄️</div><div class="tool-name">MySQL / SQL</div></div>
-      <div class="tool-chip te"><div class="tool-emoji">📗</div><div class="tool-name">MS Excel</div></div>
-      <div class="tool-chip tv"><div class="tool-emoji">🔷</div><div class="tool-name">MS Visio</div></div>
-      <div class="tool-chip ta"><div class="tool-emoji">📘</div><div class="tool-name">MS Project</div></div>
-      <div class="tool-chip ts"><div class="tool-emoji">📱</div><div class="tool-name">PDA / Barcode</div></div>
-    </div>
-  </div>
-</section>
 
-<div class="div-line"></div>
-
-<!-- CERTIFICATIONS -->
-<section class="section" id="certifications">
-  <div class="section-inner fade-in">
-    <div class="sec-eyebrow co">Credentials</div>
-    <h2 class="sec-title">Certifications</h2>
-    <p class="sec-sub">International professional certifications in supply chain management, inventory planning, and operational excellence.</p>
-    <div class="certs-grid">
-      <div class="cert-card cc1">
-        <div class="cert-badge-wrap cb1">🏆</div>
-        <h3>CPIM® – Certified in Planning &amp; Inventory Management</h3>
-        <p>The most recognized global certification for planning and inventory management professionals.</p>
-        <span class="cert-org co1">APICS-ASCM · Oct 2018</span>
-      </div>
-      <div class="cert-card cc2">
-        <div class="cert-badge-wrap cb2">🎓</div>
-        <h3>CSCA™ – Certified Supply Chain Analyst</h3>
-        <p>Professional certification validating expertise in supply chain analysis and operations management.</p>
-        <span class="cert-org co2">ISCEA-USA</span>
-      </div>
-      <div class="cert-card cc3">
-        <div class="cert-badge-wrap cb3">⭐</div>
-        <h3>HPE – High Performance Executive</h3>
-        <p>Executive development program focused on leadership and operational performance excellence.</p>
-        <span class="cert-org co3">Industria-Academia</span>
-      </div>
-      <div class="cert-card cc1">
-        <div class="cert-badge-wrap cb1">💼</div>
-        <h3>SAP ERP Essential Training</h3>
-        <p>Core SAP ERP functionality covering procurement, production, and supply chain modules.</p>
-        <span class="cert-org co1">Online Certification</span>
-      </div>
-      <div class="cert-card cc2">
-        <div class="cert-badge-wrap cb2">📦</div>
-        <h3>Inventory Management Foundations</h3>
-        <p>Foundational principles of inventory planning, control, and optimization methodologies.</p>
-        <span class="cert-org co2">Professional Dev.</span>
-      </div>
-      <div class="cert-card cc3">
-        <div class="cert-badge-wrap cb3">🔬</div>
-        <h3>Operational Excellence Foundations</h3>
-        <p>Lean, Six Sigma, and process improvement frameworks for manufacturing excellence.</p>
-        <span class="cert-org co3">Professional Dev.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div-line"></div>
-
-<!-- PUBLICATIONS -->
-<section class="section bg-alt" id="publications">
-  <div class="section-inner fade-in">
-    <div class="sec-eyebrow em">Research</div>
-    <h2 class="sec-title">Publications</h2>
-    <p class="sec-sub">Peer-reviewed academic research in inventory cost optimization and supply chain modeling, published internationally.</p>
-    <div class="pubs-grid">
-      <div class="pub-card">
-        <div class="pub-num">01</div>
-        <h3>Inventory Cost Optimization with Normally Distributed Lead Time and Stochastic Demand Considering Fill Rate</h3>
-        <p>A hybrid stochastic inventory model deriving optimal reorder point Q and ordering quantity R. Introduces penalty cost linked to fill rate — extending beyond the traditional EOQ model to a complete hybrid cost framework incorporating probabilistic demand after reorder point.</p>
-        <div class="pub-meta">
-          <span class="pub-tag">Published Nov 2017</span>
-          <span class="pub-tag">ResearchGate</span>
+      <!-- Constraint Checks -->
+      <div class="result-block">
+        <div class="result-block-header">
+          <span class="result-block-label">Constraint Checks</span>
         </div>
-        <a class="pub-link" href="https://www.researchgate.net/publication/323560663" target="_blank" style="margin-top:14px;display:inline-flex">View on ResearchGate </a>
-      </div>
-      <div class="pub-card">
-        <div class="pub-num">02</div>
-        <h3>Optimization of Inventory Cost for Stock Dependent Demand with Normally Distributed Lead Time Considering Complete Backlogging</h3>
-        <p>Extends inventory optimization theory to stock-dependent demand scenarios. Incorporates complete backlogging with normally distributed lead times into a unified cost model — bridging academic stochastic modeling with practical supply chain planning challenges in manufacturing contexts.</p>
-        <div class="pub-meta">
-          <span class="pub-tag">Academic Research</span>
-          <span class="pub-tag">Thesis</span>
-        </div>
-        <a class="pub-link" href="https://www.researchgate.net/publication/343962188" target="_blank" style="margin-top:14px;display:inline-flex">View on ResearchGate </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div-line"></div>
-
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="section-inner fade-in">
-    <div class="sec-eyebrow vi">Get in Touch</div>
-    <h2 class="sec-title">Contact Me</h2>
-    <p class="sec-sub">Open to leadership roles, consulting engagements, ERP advisory, and collaboration in manufacturing excellence and supply chain transformation.</p>
-    <div class="contact-grid">
-      <div>
-        <div class="contact-cards">
-          <div class="cc-card">
-            <div class="cc-icon ci1">📧</div>
-            <div><div class="cc-label">Email</div><div class="cc-val">asifalamipe@gmail.com</div></div>
-          </div>
-          <div class="cc-card">
-            <div class="cc-icon ci2">📱</div>
-            <div><div class="cc-label">Phone / WhatsApp</div><div class="cc-val">+880 1309-615036</div></div>
-          </div>
-          <div class="cc-card">
-            <div class="cc-icon ci3">📍</div>
-            <div><div class="cc-label">Location</div><div class="cc-val">Dhaka, Bangladesh</div></div>
-          </div>
-          <div class="cc-card">
-            <div class="cc-icon ci4">🏢</div>
-            <div><div class="cc-label">Current Role</div><div class="cc-val">Asst. Manager – GOS, Apex Holdings Ltd</div></div>
-          </div>
-        </div>
-        <div class="social-row">
-          <a class="soc-btn" href="https://www.linkedin.com/in/md-ashiful-alam11144103" target="_blank">💼 LinkedIn</a>
-          <a class="soc-btn" href="https://www.researchgate.net/publication/323560663" target="_blank">🔬 ResearchGate</a>
-          <a class="soc-btn" href="https://drive.google.com/file/d/1DhkVMhrrKtFufoX1nERXkB4FaF_07T0d/view?usp=sharing" target="_blank">📄 Download CV</a>
+        <div class="table-scroll">
+          <table class="result-table" id="checkTable">
+            <thead>
+              <tr>
+                <th>Constraint</th>
+                <th>Marker</th>
+                <th>Value</th>
+                <th>Limit</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="checkBody"></tbody>
+          </table>
         </div>
       </div>
-      <div class="contact-form-wrap">
-        <h3>Send a Message</h3>
-        <form id="contactForm">
-          <div class="form-row">
-            <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required/></div>
-            <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Organization"/></div>
-          </div>
-          <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required/></div>
-          <div class="form-group">
-            <label>Subject</label>
-            <select name="subject">
-              <option value="">Select a topic...</option>
-              <option>ERP Implementation Consulting</option>
-              <option>Supply Chain Advisory</option>
-              <option>Leadership / Job Opportunity</option>
-              <option>Manufacturing Excellence</option>
-              <option>Research Collaboration</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell me about your project or opportunity..." required></textarea></div>
-          <button class="submit-btn" type="submit">Send Message →</button>
-        </form>
+
+      <!-- Actions row -->
+      <div class="reset-row">
+        <button class="btn-reset" id="resetBtn" type="button">← New Calculation</button>
+        <button class="btn-download" id="downloadBtn" type="button">
+          <span class="dl-icon">↓</span> Download Excel
+        </button>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Md. Ashiful Alam</div>
-    <div class="footer-copy">© 2026 Md. Ashiful Alam, CPIM®, CSCA™ · ERP Project Manager · Dhaka, Bangladesh</div>
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="https://www.linkedin.com/in/md-ashiful-alam11144103" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<script>
-// Mobile menu
-const btn = document.getElementById('menuBtn');
-const menu = document.getElementById('mobileMenu');
-btn.addEventListener('click', () => {
-  menu.classList.toggle('open');
-  btn.textContent = menu.classList.contains('open') ? '✕' : '☰';
-});
-menu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => { menu.classList.remove('open'); btn.textContent = '☰'; });
-});
+  </main>
 
-// Animated counters
-function animateCounter(el, target, suffix) {
-  let val = 0;
-  const step = Math.ceil(target / 50);
-  const iv = setInterval(() => {
-    val = Math.min(val + step, target);
-    el.textContent = val + (suffix || '');
-    if (val >= target) clearInterval(iv);
-  }, 35);
-}
-setTimeout(() => {
-  animateCounter(document.getElementById('s1'), 7, '+');
-  animateCounter(document.getElementById('s2'), 6, '+');
-  animateCounter(document.getElementById('s3'), 1500, '+');
-  animateCounter(document.getElementById('s4'), 12, '+');
-}, 500);
+  <!-- ─── FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer>
+    <p>MarkerSolver · Cut Ratio Planning Tool</p>
+  </footer>
 
-// Scroll animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  <!-- ─── LIBRARIES ────────────────────────────────────────────────────────── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
-// Skill bars animation
-const skillObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.skill-fill').forEach(bar => {
-        bar.style.width = bar.dataset.w + '%';
+  <!-- solver.js inline copy (id="solverScript") used to create a Web Worker blob -->
+  <!-- The actual solver.js is also loaded below for main-thread fallback -->
+  <script id="solverScript" type="text/js-worker">
+    <!-- solver source injected below at build time; see note in README -->
+    <!-- This tag is read by app.js to create a Worker blob -->
+  </script>
+
+  <script src="solver.js"></script>
+  <script src="export.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Inline-embed solver source into #solverScript so app.js can blob-URL it -->
+  <script>
+    // Fetch solver.js source and inject into the script tag used by the Worker
+    fetch('solver.js')
+      .then(r => r.text())
+      .then(src => {
+        document.getElementById('solverScript').textContent = src;
+      })
+      .catch(() => {
+        // If fetch fails (e.g. file:// protocol), Worker will fail gracefully
+        // and app.js falls back to main-thread execution.
       });
-      skillObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.2 });
-document.querySelectorAll('.skills-wrap').forEach(el => skillObs.observe(el));
-
-// Timeline items slide-in animation
-const tlObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const items = Array.from(e.target.parentElement.children);
-      const idx = items.indexOf(e.target);
-      e.target.style.transitionDelay = (idx * 0.15) + 's';
-      e.target.classList.add('visible');
-      tlObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.15 });
-document.querySelectorAll('.tl-item').forEach(el => tlObs.observe(el));
-
-// Project filter
-document.querySelectorAll('.filt-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.filt-btn').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    const cat = this.dataset.cat;
-    document.querySelectorAll('.proj-card').forEach(card => {
-      if (cat === 'all' || card.dataset.cat === cat) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-});
-
-// Contact form -> auto email via FormSubmit
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = contactForm.querySelector('.submit-btn');
-    const originalText = btn.textContent;
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-
-    const formData = new FormData(contactForm);
-    formData.append('_subject', 'New portfolio contact message');
-    formData.append('_captcha', 'false');
-    formData.append('_template', 'table');
-
-    fetch('https://formsubmit.co/ajax/asifalamipe@gmail.com', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: formData
-    })
-    .then(res => res.json())
-    .then(() => {
-      alert('Thank you! Your message has been received. I will respond within 24 hours.');
-      contactForm.reset();
-    })
-    .catch(() => {
-      alert('Sorry, something went wrong sending your message. Please email asifalamipe@gmail.com directly.');
-    })
-    .finally(() => {
-      btn.textContent = originalText;
-      btn.disabled = false;
-    });
-  });
-}
-
-// Smooth nav active state
-const sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', () => {
-  const y = window.scrollY + 80;
-  sections.forEach(s => {
-    if (y >= s.offsetTop && y < s.offsetTop + s.offsetHeight) {
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        a.style.color = a.getAttribute('href') === '#' + s.id ? 'var(--emerald)' : '';
-      });
-    }
-  });
-});
-</script>
+  </script>
 </body>
 </html>
